@@ -156,6 +156,11 @@ Itunes.prototype.changeProvider = function(providerId, callback) {
   });
 };
 
+Itunes.prototype.getRating = function(appId, callback) {
+  var url = 'https://itunesconnect.apple.com/WebObjects/iTunesConnect.woa/ra/apps/' + appId + '/platforms/ios/reviews/summary';
+  this.getAPIURL(url, callback);
+};
+
 Itunes.prototype.getApps = function(callback) {
   var url = 'https://analytics.itunes.apple.com/analytics/api/v1/app-info/app';
   this.getAPIURL(url, callback);
